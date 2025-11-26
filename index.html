@@ -1,112 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Anita Kumari - Senior Frontend Engineer & UI/UX Specialist">
-  <title>Anita Kumari - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Anita Kumari - Senior Frontend Engineer & UI/UX Specialist">
+<title>Anita Kumari - Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Reset */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; scroll-behavior: smooth; }
+  body { background:#f5f6fa; color:#333; line-height:1.6; }
+
+  a { color:#0073b1; text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  .container { width:90%; max-width:1000px; margin:auto; padding:2rem 0; }
+
+  /* Navigation Bar */
+  nav { position:sticky; top:0; background:#fff; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; box-shadow:0 2px 10px rgba(0,0,0,0.1); z-index:1000; }
+  nav .logo { font-weight:700; color:#0073b1; font-size:1.2rem; }
+  nav ul { display:flex; gap:1.5rem; list-style:none; }
+  nav ul li a { font-weight:600; }
+  nav .resume-btn { background:#0073b1; color:#fff; padding:0.5rem 1rem; border-radius:5px; font-weight:600; transition:background 0.3s; }
+  nav .resume-btn:hover { background:#005a8c; }
+
+  /* Header */
+  header.hero { background:#0073b1; color:#fff; text-align:center; padding:4rem 2rem; border-bottom-left-radius:50px; border-bottom-right-radius:50px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-top:1rem; }
+  header.hero h1 { font-size:2.8rem; margin-bottom:0.5rem; }
+  header.hero .title { font-size:1.2rem; margin-bottom:1rem; }
+
+  /* Sections */
+  section { padding:3rem 0; margin:2rem 0; background:#fff; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05); opacity:0; transform: translateY(20px); transition:opacity 0.8s ease, transform 0.8s ease; }
+  section.visible { opacity:1; transform: translateY(0); }
+  section h2 { color:#0073b1; margin-bottom:1.5rem; text-align:center; }
+
+  /* Skills Grid */
+  .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+  .skills-grid div { background:#f0f4f8; padding:1rem 1.5rem; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05); transition:transform 0.3s ease; }
+  .skills-grid div:hover { transform:translateY(-5px); }
+
+  /* Job cards */
+  .job { background:#f9fafc; padding:1.5rem 2rem; margin-bottom:1.5rem; border-left:5px solid #0073b1; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); transition:transform 0.3s ease; }
+  .job:hover { transform:translateY(-5px); }
+  .job h3 { color:#0073b1; margin-bottom:0.3rem; }
+  .job p { font-weight:600; margin-bottom:0.5rem; }
+  .job ul { margin-left:1.2rem; list-style:disc; }
+
+  /* Footer */
+  footer { text-align:center; padding:2rem 0; background:#0073b1; color:#fff; border-top-left-radius:50px; border-top-right-radius:50px; margin-top:2rem; box-shadow:0 -4px 15px rgba(0,0,0,0.1); }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    nav ul { flex-direction:column; gap:0.8rem; }
+    header.hero h1 { font-size:2rem; }
+    header.hero .title { font-size:1rem; }
+  }
+</style>
 </head>
 <body>
-  <!-- Header / Hero Section -->
-  <header class="hero">
-    <div class="container">
-      <h1>Anita Kumari</h1>
-      <p class="title">Senior Frontend Engineer • UI/UX Specialist • Performance-Driven Developer</p>
-      <p>Singapore Permanent Resident (SPR) | 📍 Singapore | 📞 +65-8014-0699</p>
-      <p>✉️ neerusharma.anita@gmail.com</p>
-      <p>🔗 <a href="https://linkedin.com/in/anita-kumari-36909463/" target="_blank">LinkedIn Profile</a></p>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">Anita Kumari</div>
+  <ul>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+  <a href="Anita_Kumari_Resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
+</nav>
+
+<!-- Header -->
+<header class="hero">
+  <div class="container">
+    <h1>Anita Kumari</h1>
+    <p class="title">Senior Frontend Engineer • UI/UX Specialist • Performance-Driven Developer</p>
+    <p>Singapore Permanent Resident (SPR) | 📍 Singapore | 📞 +65-8014-0699</p>
+    <p>✉️ neerusharma.anita@gmail.com</p>
+    <p>🔗 <a href="https://linkedin.com/in/anita-kumari-36909463/" target="_blank">LinkedIn Profile</a></p>
+  </div>
+</header>
+
+<!-- Summary -->
+<section id="summary">
+  <div class="container">
+    <h2>Professional Summary</h2>
+    <p>Innovative Senior Frontend Engineer with 9+ years of experience building modern, optimized, and accessible web applications across ReactJS, CMS platforms, eCommerce systems, and cross-platform interfaces (Web/iOS/Android/XR). Expert in transforming UX concepts into fast, scalable, SEO-friendly digital products.</p>
+    <p>Known for elevating performance by up to 60%, reducing page load times by 40%, and improving UI consistency by 70% through reusable components and design-system-driven development. Proven ability to collaborate with globally distributed teams and deliver enterprise-grade customer experiences.</p>
+  </div>
+</section>
+
+<!-- Core Competencies -->
+<section id="skills">
+  <div class="container">
+    <h2>Core Competencies</h2>
+    <div class="skills-grid">
+      <div><h3>Frontend</h3><p>ReactJS, JavaScript (ES6+), HTML5, CSS3, Bootstrap, KnockoutJS, jQuery, SASS, LESS</p></div>
+      <div><h3>UX / Prototyping</h3><p>Figma, Adobe XD, Responsive Design, Accessibility (WCAG), Micro-interactions</p></div>
+      <div><h3>CMS / SEO</h3><p>WordPress, OCC, Metadata, Structured Data, Sitemap, Schema, SEO Optimization</p></div>
+      <div><h3>Tools</h3><p>Git, JIRA, Postman, SVN, Lighthouse, Core Web Vitals, Agile/Scrum</p></div>
+      <div><h3>Platforms</h3><p>Web, iOS, Android, PHP, MySQL, Oracle Cloud</p></div>
+      <div><h3>Soft Skills</h3><p>Cross-functional Collaboration, Mentorship, Problem-Solving, Creative Thinking</p></div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- Professional Summary -->
-  <section id="summary">
-    <div class="container">
-      <h2>Professional Summary</h2>
-      <p>Innovative Senior Frontend Engineer with 9+ years of experience building modern, optimized, and accessible web applications across ReactJS, CMS platforms, eCommerce systems, and cross-platform interfaces (Web/iOS/Android/XR). Expert in transforming UX concepts into fast, scalable, SEO-friendly digital products.</p>
-      <p>Known for elevating performance by up to 60%, reducing page load times by 40%, and improving UI consistency by 70% through reusable components and design-system-driven development. Proven ability to collaborate with globally distributed teams and deliver enterprise-grade customer experiences.</p>
-    </div>
-  </section>
+<!-- Professional Experience -->
+<section id="experience">
+  <div class="container">
+    <h2>Professional Experience</h2>
 
-  <!-- Core Competencies -->
-  <section id="skills">
-    <div class="container">
-      <h2>Core Competencies</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>Frontend</h3>
-          <p>ReactJS, JavaScript (ES6+), HTML5, CSS3, Bootstrap, KnockoutJS, jQuery, SASS, LESS</p>
-        </div>
-        <div>
-          <h3>UX / Prototyping</h3>
-          <p>Figma, Adobe XD, Responsive Design, Accessibility (WCAG), Micro-interactions</p>
-        </div>
-        <div>
-          <h3>CMS / SEO</h3>
-          <p>WordPress, OCC, Metadata, Structured Data, Sitemap, Schema, SEO Optimization</p>
-        </div>
-        <div>
-          <h3>Tools</h3>
-          <p>Git, JIRA, Postman, SVN, Lighthouse, Core Web Vitals, Agile/Scrum</p>
-        </div>
-        <div>
-          <h3>Platforms</h3>
-          <p>Web, iOS, Android, PHP, MySQL, Oracle Cloud</p>
-        </div>
-        <div>
-          <h3>Soft Skills</h3>
-          <p>Cross-functional Collaboration, Mentorship, Problem-Solving, Creative Thinking</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Professional Experience -->
-  <section id="experience">
-    <div class="container">
-      <h2>Professional Experience</h2>
-
-      <div class="job">
-        <h3>Senior Frontend Developer</h3>
-        <p><strong>Convergent Systems – Singapore | May 2023 – Present</strong></p>
-        <ul>
-          <li>Modernized corporate website with ReactJS + ES6, boosting Lighthouse performance by 52% and accessibility by 45%.</li>
-          <li>Built responsive UI components, reducing layout defects by 70%.</li>
-          <li>Integrated real-time JSON APIs with 30% faster rendering.</li>
-          <li>Implemented lazy loading, route splitting & caching, cutting page load time by ~1.8s.</li>
-          <li>Collaborated with UX teams to improve user task completion by 28%.</li>
-          <li>Contributed to code reviews, sprint planning, delivering features 20% ahead of schedule.</li>
-        </ul>
-      </div>
-
-      <!-- Add other roles similarly (Full Stack Developer, Software Developer, etc.) -->
-      <!-- To save space here, I can provide a full version with all experiences next -->
-
-    </div>
-  </section>
-
-  <!-- Education & Certifications -->
-  <section id="education">
-    <div class="container">
-      <h2>Education</h2>
-      <p>Bachelor of Technology in Computer Science, Graduated 2012</p>
-
-      <h2>Certifications & Awards</h2>
+    <div class="job">
+      <h3>Senior Frontend Developer</h3>
+      <p><strong>Convergent Systems – Singapore | May 2023 – Present</strong></p>
       <ul>
-        <li>OCI Foundation Certification, Oracle (2021)</li>
-        <li>Google UX Design Certificate (in progress)</li>
-        <li>Oracle University “Customer Delight” Award</li>
+        <li>Modernized corporate website with ReactJS + ES6, boosting Lighthouse performance by 52% and accessibility by 45%.</li>
+        <li>Built responsive UI components, reducing layout defects by 70%.</li>
+        <li>Integrated real-time JSON APIs with 30% faster rendering.</li>
+        <li>Implemented lazy loading, route splitting & caching, cutting page load time by ~1.8s.</li>
+        <li>Collaborated with UX teams to improve user task completion by 28%.</li>
+        <li>Contributed to code reviews, sprint planning, delivering features 20% ahead of schedule.</li>
       </ul>
     </div>
-  </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Anita Kumari. All Rights Reserved.</p>
+    <div class="job">
+      <h3>Full Stack Developer (Freelance)</h3>
+      <p><strong>Singapore | Mar 2023 – May 2023</strong></p>
+      <ul>
+        <li>Delivered multiple WordPress & ReactJS applications with custom PWA capabilities, improving mobile engagement by 35%.</li>
+        <li>Built reusable frontend components, reducing development time for future projects by 40%.</li>
+        <li>Implemented SEO enhancements (schema, metadata, mobile indexing), resulting in ~25% traffic uplift.</li>
+        <li>Improved UX through custom interactions, increasing session duration by 18%.</li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="job">
+      <h3>Software Developer</h3>
+      <p><strong>Allied Group – Singapore | Jul 2022 – Oct 2022</strong></p>
+      <ul>
+        <li>Developed enterprise UI components from Figma wireframes with pixel-perfect accuracy.</li>
+        <li>Created detailed DFD and Git workflow documentation, reducing onboarding time by 30%.</li>
+        <li>Improved cross-team collaboration by establishing reusable UI standards.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Senior Web Developer</h3>
+      <p><strong>Oracle – India | Sep 2018 – Jul 2022</strong></p>
+      <ul>
+        <li>Designed and developed scalable eCommerce features using OCC, ReactJS & KnockoutJS for global clients.</li>
+        <li>Built and maintained reusable UI libraries, reducing code duplication by 55% and bug frequency by 32%.</li>
+        <li>Managed catalog, inventory flows, and API integrations using Postman and DCU.</li>
+        <li>Mentored junior engineers—5 developers promoted under her guidance.</li>
+        <li>Led responsive redesign efforts, improving mobile performance by 38% and fixing cross-browser issues.</li>
+        <li>Contributed to SEO optimization projects improving product discoverability by ~22%.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Assistant Consultant (Oracle University – Genesys Group)</h3>
+      <p><strong>Oracle – India | Apr 2016 – Sep 2018</strong></p>
+      <ul>
+        <li>Rebuilt Oracle University website with a modern responsive architecture, reducing bounce rate by 29%.</li>
+        <li>Maintained CMS workflows, improving publishing efficiency by 35%.</li>
+        <li>Worked closely with product & design teams to implement consistent, user-friendly UI flows.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Web Developer</h3>
+      <p><strong>Viaweb Technology / GCS Infotech – India | Nov 2012 – Dec 2015</strong></p>
+      <ul>
+        <li>Delivered end-to-end website solutions using PHP, WordPress & MySQL.</li>
+        <li>Designed SEO-friendly UI and implemented media-query-based responsiveness, improving mobile usability by 50%.</li>
+        <li>Built newsletter templates and UI modules that increased marketing campaign CTR by 15–20%.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Education & Certifications -->
+<section id="education">
+  <div class="container">
+    <h2>Education</h2>
+    <p>Bachelor of Technology in Computer Science, Graduated 2012</p>
+
+    <h2>Certifications & Awards</h2>
+    <ul>
+      <li>OCI Foundation Certification, Oracle (2021)</li>
+      <li>Google UX Design Certificate (in progress)</li>
+      <li>Oracle University “Customer Delight” Award</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Anita Kumari. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll animation for sections
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold:0.1 });
+  sections.forEach(section => observer.observe(section));
+</script>
+
 </body>
 </html>
