@@ -7,7 +7,7 @@
 <title>Anita Kumari - Portfolio</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -154,17 +154,5 @@
     <p>&copy; 2025 Anita Kumari. All Rights Reserved.</p>
   </div>
 </footer>
-
-<script>
-  // Scroll animation for sections
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold:0.1 });
-  sections.forEach(section => observer.observe(section));
-</script>
-
 </body>
 </html>
